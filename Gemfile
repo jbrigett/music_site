@@ -5,7 +5,7 @@ ruby '2.5.3'
 
 gem 'devise'
 gem 'dragonfly'
-gem 'bootstrap', '~> 4.0.0'
+gem 'bootstrap', '~> 4.3.1'
 gem 'jquery-rails'
 gem 'devise-i18n'
 gem 'devise-bootstrap-views', '~> 1.0'
