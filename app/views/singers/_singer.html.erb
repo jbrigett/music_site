@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <%= image_tag(singer.image.thumb('200x200#').url, alt: singer.name) if singer.image_stored? %>
+    </div>
+    <div class="col">
+       <div class="row" align="left">
+         <%= link_to singer.name, singer_path(singer)%>
+    </div>
+      <div class="row" >
+       <%= singer.description %>
+     </div>
+    </div>
+  </div>
+
+</div>
+s

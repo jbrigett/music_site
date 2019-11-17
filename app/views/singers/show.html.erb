@@ -1,0 +1,59 @@
+<div class="container-fluid">
+
+  <div class="row">
+      <div class="col" align="center" border=1000px>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+          <%= t(:'Добавить песню') %>
+        </button>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel"><%=t(:'Добавить песню')%></h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <%= form_for [@singer, Song.new] do |f| %>
+
+            <div class="field">
+              <%= f.label :title%>
+              <%= f.text_field :title, :placeholder=> t(:'Песня') %>
+            </div>
+
+            <div class="field">
+              <%= f.label :track%>
+              <%= f.file_field :track%>
+            </div>
+
+            <div class="actions">
+              <%= f.submit t(:'Добавить')%>
+            </div>
+          <% end %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal"><%= t(:'Закрыть')%></button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <%= image_tag(@singer.image.thumb('200x200#').url, alt: @singer.name) if @singer.image_stored? %>
+        </div>
+        <div class="col">
+          <div class="row">
+            <%=  @singer.name %>
+          </div>
+          <div class="row">
+            <%=   @singer.description %>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+
+</div>
